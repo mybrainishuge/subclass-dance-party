@@ -42,6 +42,20 @@ $(document).ready(function() {
     $('body').append(superhero.$node);
   });
 
+  $('.spiderman').on('click', function(event) {
+    var move = function(){
+      var h = $(window).height() - 50;
+      var w = $(window).width() - 50;
+      var newx = Math.floor(Math.random() * h);
+      var newy = Math.floor(Math.random() * w);
+
+      $('.spiderman').animate({top: newx, left: newy}, 3000);
+    };
+
+    setTimeout(move, 1000);
+
+  });
+
 
   $('.addBatmanButton').on('click', function(event) {
     var superheroMakerFunctionName = $(this).data('batman-maker-function-name');
