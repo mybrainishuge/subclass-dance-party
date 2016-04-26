@@ -29,6 +29,36 @@ $(document).ready(function() {
     );
     $('body').append(animal.$node);
     window.dancers.push(animal);
+
+    $('.dancer').on('click', function(event) {
+      var h = $(this).position().top;
+      var w = $(this).position().left;
+      // debugger;
+      
+      var shortestDistance = Infinity;
+      var distance, closestElement;
+
+      for (var i = 0; i < window.dancers.length; i++) {
+        var h2 = $(window.dancers[i].$node).position().top;
+        var w2 = $(window.dancers[i].$node).position().left;
+        distance = Math.sqrt(Math.pow(h - h2, 2) + Math.pow(w - w2, 2));
+  
+        if (distance > 0 && distance < shortestDistance) {
+          shortestDistance = distance;
+          closestElement = window.dancers[i].$node;
+        }
+      }
+
+      var h2 = $(closestElement).position().top;
+      var w2 = $(closestElement).position().left;
+
+      $(closestElement).css({top: h, left: w});
+      $(this).css({top: h2, left: w2});
+      // 
+      
+    });
+
+
   });
 
 
@@ -76,7 +106,9 @@ $(document).ready(function() {
     $('body').append(superhero.$node);
 
     window.dancers.push(superhero);
+
   });
+
 
 
   $('.moveLeft').on('click', function(event) {
@@ -94,31 +126,6 @@ $(document).ready(function() {
     //will need to subtract left values from each other and square them
       //add together; square root = distance
         //if distance is <= (2-5), do this
-  $('.dancer').on('click', function(event){
-    var h = $(this).css('top');
-    var w = $(this).css('left');
-    var neighbors = {};
-    for (var i = 0; i < window.dancers.length; i++) {
-      var h2 = $(window.dancers[i].$node).css('top');
-      var w2 = $(window.dancers[i].$node).css('left');
-
-      var distance = Math.sqrt((h - h2) ^ 2 + (w - w2) ^ 2);
-      neighbors[window.dancers[i]] = distance;
-    }
-    var smallest;
-    for (var item in neighbors) {
-      
-      var previous = previous || neighbors[window.dancers[0]];
-
-      if (neighbors[item] < previous) {
-        smallest = item;
-        previous = neighbors[item];
-      }
-    }
-
-    
-
-  });
-
+  
 });
 
