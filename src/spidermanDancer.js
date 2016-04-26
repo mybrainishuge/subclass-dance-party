@@ -1,7 +1,7 @@
 var spidermanDancer = function(top, left, timeBetweenSteps) {
   superheroDancer.call(this, top, left, timeBetweenSteps);
 
-  this.$node = $('<img src="assets/spiderman.gif" class="spiderman"></span>');
+  this.$node = $('<img src="assets/spiderman.gif" class="dancer spiderman"></span>');
   this.setPosition(top, left);
 };
 
