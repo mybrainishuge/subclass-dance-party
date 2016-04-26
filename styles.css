@@ -11,7 +11,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton, .addRaccoonButton, .addSpidermanButton, .addBatmanButton{
+.title, .addDancerButton, .addRaccoonButton, .addSpidermanButton, .addBatmanButton, .lineUp{
   padding:5px 12px;
   float:right;
 }
@@ -26,6 +26,7 @@ body, a:link, a:visited, a:active{
   /*border:10px solid red;*/
   /*border-radius:10px;*/
   position:absolute;
+  transition: all 3s ease-in-out;
 }
 .animal{
   border:2px solid black;
@@ -36,12 +37,12 @@ body, a:link, a:visited, a:active{
   width: 200px;
   height: 150px;
   position:absolute;
+  transition: all 1s linear;
 }
 .batman{
   border:2px solid black;
   width: 200px;
   height: 150px;
-  transition: all 3s ease-in-out; 
 }
 .batman:hover{ 
   transform: scale(2.0); 
