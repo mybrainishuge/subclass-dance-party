@@ -1,10 +1,10 @@
-var spidermanDancer = function(top, left, timeBetweenSteps) {
-  superheroDancer.call(this, top, left, timeBetweenSteps);
+var Spiderman = function(top, left, timeBetweenSteps) {
+  Superhero.call(this, top, left, timeBetweenSteps);
 
-  this.$node = $('<img src="assets/spiderman.gif" class="dancer spiderman">');
+  this.$node = $('<img src="assets/spiderman.gif" class="dancer spiderman superhero">');
   this.setPosition(top, left);
 };
 
 
-spidermanDancer.prototype = Object.create(superheroDancer.prototype);
-spidermanDancer.prototype.constructor = spidermanDancer;
+Spiderman.prototype = Object.create(Superhero.prototype);
+Spiderman.prototype.constructor = Spiderman;

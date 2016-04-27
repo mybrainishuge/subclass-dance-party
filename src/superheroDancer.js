@@ -1,7 +1,7 @@
-var superheroDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var Superhero = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
 };
 
 
-superheroDancer.prototype = Object.create(makeDancer.prototype);
-superheroDancer.prototype.constructor = superheroDancer;
+Superhero.prototype = Object.create(Dancer.prototype);
+Superhero.prototype.constructor = Superhero;

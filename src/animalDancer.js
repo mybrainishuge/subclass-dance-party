@@ -1,7 +1,7 @@
-var animalDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var Animal = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
 };
 
 
-animalDancer.prototype = Object.create(makeDancer.prototype);
-animalDancer.prototype.constructor = animalDancer;
+Animal.prototype = Object.create(Dancer.prototype);
+Animal.prototype.constructor = Animal;

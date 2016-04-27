@@ -1,10 +1,10 @@
-var batmanDancer = function(top, left, timeBetweenSteps) {
-  superheroDancer.call(this, top, left, timeBetweenSteps);
+var Batman = function(top, left, timeBetweenSteps) {
+  Superhero.call(this, top, left, timeBetweenSteps);
 
-  this.$node = $('<img src="assets/batman.gif" class="dancer batman">');
+  this.$node = $('<img src="assets/batman.gif" class="dancer batman superhero">');
   this.setPosition(top, left);
 };
 
 
-batmanDancer.prototype = Object.create(superheroDancer.prototype);
-batmanDancer.prototype.constructor = batmanDancer;
+Batman.prototype = Object.create(Superhero.prototype);
+Batman.prototype.constructor = Batman;
