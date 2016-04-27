@@ -7,7 +7,7 @@ $(document).ready(function() {
     $('.dancer').on('click', function(event) {
       var h = $(this).position().top;
       var w = $(this).position().left;
-      
+
       var shortestDistance = Infinity;
       var distance, closestElement;
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
         var h2 = $(window.dancers[i].$node).position().top;
         var w2 = $(window.dancers[i].$node).position().left;
         distance = Math.sqrt(Math.pow(h - h2, 2) + Math.pow(w - w2, 2));
-  
+
         if (distance > 0 && distance < shortestDistance) {
           shortestDistance = distance;
           closestElement = window.dancers[i].$node;
@@ -42,6 +42,12 @@ $(document).ready(function() {
     $('body').append(animal.$node);
     window.dancers.push(animal);
 
+    $(animal.$node).hover(function(event) {
+      $(this).fadeOut('slow');
+    }, function() {
+      $(this).fadeIn('slow');
+    });
+
     swap();
   });
 
@@ -62,7 +68,7 @@ $(document).ready(function() {
     $(superhero.$node).on('click', function(event) {
 
       var $context = $(this);
-      var move = function() {  
+      var move = function() {
         var h = $(window).height() - 50;
         var w = $(window).width() - 50;
         var newx = Math.floor(Math.random() * h);
@@ -76,7 +82,7 @@ $(document).ready(function() {
     });
 
     swap();
-    
+
   });
 
 
@@ -107,14 +113,22 @@ $(document).ready(function() {
     }
 
     refreshIntervals = [];
-    
+
     $('.spiderman').stop();
 
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].setPosition(x, y);
       y += 150;
     }
+  });
 
+  $('.disperse').on('click', function(event) {
+    window.dancers.forEach(function(dancer) {
+      dancer.setPosition(
+        $('body').height() * Math.random(),
+        $('body').width() * Math.random()
+      );
+    });
   });
 
 });
